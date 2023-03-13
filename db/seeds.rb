@@ -14,7 +14,7 @@ games = Game.create([
 
 {
     name: "Path of Exile",
-    image_url: "https://en.wikipedia.org/wiki/Path_of_Exile#/media/File:Path_of_Exile_Logo.png"
+    image_url: "https://logos-world.net/path-of-exile-logo/"
 },
 
 {

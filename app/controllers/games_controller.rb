@@ -2,6 +2,7 @@ class GamesController < ApplicationController
 
     def index
         games = Game.all
+        # byebug
         render json: games
     end
 

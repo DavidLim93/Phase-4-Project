@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_04_041013) do
+ActiveRecord::Schema.define(version: 2023_03_05_031707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2023_03_04_041013) do
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
+    t.integer "average_score", default: 0
   end
 
   create_table "reviews", force: :cascade do |t|
