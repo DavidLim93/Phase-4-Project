@@ -12,6 +12,10 @@ body {
   font-size: 80px;
 }
 
+.home {
+  font-size: 30px;
+}
+
 .cards{
   margin: 1rem;
   box-shadow: 0 0 7px 0 #ddd;

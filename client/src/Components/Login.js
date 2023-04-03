@@ -2,6 +2,9 @@ import React, {useState} from "react";
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false)
+    const [errors, setErrors] = useState([])
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -10,10 +13,16 @@ function Login({ onLogin }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username }),
+        body: JSON.stringify({ username, password }),
       })
-        .then((r) => r.json())
-        .then((user) => onLogin(user));
+        .then((r) => {
+          setIsLoading(false);
+          if (r.ok) {
+            r.json().then((user) => onLogin(user));
+          } else {
+            r.json().then((err) => setErrors(err.errors));
+          }
+        });
     }
   
     return (
@@ -21,9 +30,16 @@ function Login({ onLogin }) {
         <input
           type="text"
           value={username}
+          placeholder="Username..."
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <input
+          type="text"
+          value={password}
+          placeholder="Password..."
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">{isLoading ? "Loading..." : "Login"}</button>
       </form>
     );
   }

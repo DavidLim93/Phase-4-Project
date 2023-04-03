@@ -8,10 +8,13 @@
     "build": "npm install --prefix client && npm run build --prefix client",
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+    "heroku-postbuild": "npm run clean && npm run build && npm run deploy",
+    "start": "react-scripts start"
   },
   "dependencies": {
-    "install": "^0.13.0",
-    "react-router-dom": "^6.8.2"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.9"
   }
 }

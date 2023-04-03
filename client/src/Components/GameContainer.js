@@ -4,8 +4,10 @@ import GameCard from "./GameCard";
 
 function GameContainer() {
 
-    const [games, setGames] = useState([])
+  const [games, setGames] = useState([])
 
+
+  
     useEffect (() => {
       fetch("./games")
       .then((r) => r.json())
@@ -14,6 +16,8 @@ function GameContainer() {
         setGames(games)
       })
     }, [])
+
+
 
     
 
@@ -26,7 +30,6 @@ function GameContainer() {
                 name={game.name}
                 image_url={game.image_url}
                 average_score={game.average_score}
-                
                     />
         })}
      </div>

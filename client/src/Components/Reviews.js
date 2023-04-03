@@ -1,9 +1,7 @@
 import React from "react";
 import Rating from "./Rating";
 
-function Reviews () {
-
-    const {title, description, score} = attributes
+function Reviews ({title, description, score} ) {
 
 
 
@@ -11,7 +9,7 @@ function Reviews () {
         <div className="reviews">
             <h3>{title}</h3>
             <p>{description}</p>
-            <Rating score={score}/>
+            {/* <Rating score={score}/> */}
         </div>
     )
 
